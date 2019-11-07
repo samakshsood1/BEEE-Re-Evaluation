@@ -1,0 +1,31 @@
+int ledPin = 9;
+int ldrPin = 0;
+int lightVal = 0;
+int ledDelay = 10000;
+int redPin = 10;
+int greenPin = 8;
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+}
+void loop()
+{  
+  int ldrStatus = analogRead(ldrPin);
+  lightVal = analogRead(ldrPin);
+  digitalWrite(ledPin, HIGH);
+  delay(lightVal);
+  digitalWrite(ledPin, LOW);
+  delay(lightVal); 
+
+     if (ldrStatus <=300) {
+     digitalWrite(redPin, HIGH);
+     delay(ledDelay); 
+     }
+  else
+  {
+     digitalWrite(redPin, LOW); 
+     digitalWrite(greenPin, HIGH); 
+  }
+ }
